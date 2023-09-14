@@ -62,47 +62,87 @@ public class Snacks {
 //		SNACK 4
 		//Data in input una stringa verificare se è palindroma
 		
-		System.out.print("inserire una parola: ");
-		String parolaInserita = sc.nextLine();
-		
-		//divido la stringa in caratteri singoli
-		char[] parolaScomposta = parolaInserita.toCharArray();
-		System.out.println("parola scomposta: " + Arrays.toString(parolaScomposta));
-		
-		//creo un array lungo qunato la parola
-		char[] parolaScompostaInvertita = new char[parolaScomposta.length];
-		
-		//inizializzo una variabile x che prende il valore della lunghezza dell'array -1
-		//(sarà il numero dell'ultimo indice 
-		int x=parolaScomposta.length-1;
-		
-		//ad ogni ciclo l'indice viene sostituito con le lettere
-		for(int i=0; i<parolaScomposta.length; i++) {
-			parolaScompostaInvertita[x] = parolaScomposta[i];
-			x = x-1;
-		}
-		System.out.println("parola  scomposta Invertita: " + Arrays.toString(parolaScompostaInvertita));
-		
-		//creo una nuova stringa con l'array invertito
-		String parolaInvertita = new String(parolaScompostaInvertita);
-		System.out.println("parola Invertita: " + parolaInvertita);
-		
-		//il metodo equals() confronta due stringhe e restituisce true se è vero
-//		if(parolaInvertita.equals(parolaInserita)) {
-//			System.out.println("la parola inserita è palindroma");
-//		}else {
-//			System.out.println("la parola inserita non è palindroma");
+//		System.out.print("inserire una parola: ");
+//		String parolaInserita = sc.nextLine();
+//		
+//		//divido la stringa in caratteri singoli
+//		char[] parolaScomposta = parolaInserita.toCharArray();
+//		System.out.println("parola scomposta: " + Arrays.toString(parolaScomposta));
+//		
+//		//creo un array lungo qunato la parola
+//		char[] parolaScompostaInvertita = new char[parolaScomposta.length];
+//		
+//		//inizializzo una variabile x che prende il valore della lunghezza dell'array -1
+//		//(sarà il numero dell'ultimo indice 
+//		int x=parolaScomposta.length-1;
+//		
+//		//ad ogni ciclo l'indice viene sostituito con le lettere
+//		for(int i=0; i<parolaScomposta.length; i++) {
+//			parolaScompostaInvertita[x] = parolaScomposta[i];
+//			x = x-1;
 //		}
+//		System.out.println("parola  scomposta Invertita: " + Arrays.toString(parolaScompostaInvertita));
+//		
+//		//creo una nuova stringa con l'array invertito
+//		String parolaInvertita = new String(parolaScompostaInvertita);
+//		System.out.println("parola Invertita: " + parolaInvertita);
+//		
+//		//il metodo equals() confronta due stringhe e restituisce true se è vero
+////		if(parolaInvertita.equals(parolaInserita)) {
+////			System.out.println("la parola inserita è palindroma");
+////		}else {
+////			System.out.println("la parola inserita non è palindroma");
+////		}
+//		
+//		//stessa condizione con l'operatore ternario
+//		System.out.println(
+//				parolaInvertita.equals(parolaInserita)
+//				? "la parola inserita è palindroma"
+//				: "la parola inserita non è palindroma"
+//				);
+//		//--------------------------------------------------------
+//		
+//		//SNACK 5
+		//Data una stringa in input mostrare a video quanti caratteri alfabetici contiene, quanti numeri e 
+		//quanti simboli non alfanumerici. Continuare a chiedere una nuova stringa finchè non si inserisce 0.
 		
-		//stessa condizione con l'operatore ternario
-		System.out.println(
-				parolaInvertita.equals(parolaInserita)
-				? "la parola inserita è palindroma"
-				: "la parola inserita non è palindroma"
-				);
-		//--------------------------------------------------------
+		String parolaInserita = null;
+		
+		do {
+			System.out.print("inserire una parola mista");
+		    parolaInserita = sc.nextLine();
+		    
+		    int lettere = 0;
+		    int numeri = 0;
+		    int simboli = 0;
+		    
+			
+			for(int i=0; i<parolaInserita.length(); i++) {
+				char carattere = parolaInserita.charAt(i);
+				
+				 if (Character.isLetter(carattere)) {
+					 lettere++;
+		            } else if (Character.isDigit(carattere)) {
+		            	numeri++;
+		            } else {
+		            	simboli++;
+		            }
+			}
+			
+			String msgL = (lettere == 1 ? " lettera, " : " lettere, ");
+			String msgN = (lettere == 1 ? " numero, " : " numeri, ");
+			String msgS = (lettere == 1 ? " simbolo, " : " simboli, ");
+			
+			System.out.println("nella parola che hai inserito ci sono " 
+			+ lettere + msgL
+			+ numeri + msgN 
+			+ simboli + msgS);
+			
+		} while (!parolaInserita.equals("0"));
+//		//--------------------------------------------------------
 		
 		
+
 	}
 
 }
