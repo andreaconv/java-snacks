@@ -1,6 +1,6 @@
 package org.java;
 
-import java.util.Random;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Snacks {
@@ -44,20 +44,65 @@ public class Snacks {
 		
 		//SNAK 3
 		//Crea un array di numeri interi e fai la somma di tutti gli elementi  che sono in posizione dispari
-		
-		int[] numeri = {1, 3, 5, 7, 12, 15, 17, 23, 28, 31, 37, 44, 47, 51, 59};
-		
-		int sum = 0;
-
-		for(int i=0; i<numeri.length; i++) {
-			
-			if(!(i % 2 == 0)) {
-				
-				sum += numeri[i];
-			}
-		}
-		System.out.println(sum);
+//		
+//		int[] numeri = {1, 3, 5, 7, 12, 15, 17, 23, 28, 31, 37, 44, 47, 51, 59};
+//		
+//		int sum = 0;
+//
+//		for(int i=0; i<numeri.length; i++) {
+//			
+//			if(!(i % 2 == 0)) {
+//				
+//				sum += numeri[i];
+//			}
+//		}
+//		System.out.println(sum);
 		//--------------------------------------------------------
+		
+//		SNACK 4
+		//Data in input una stringa verificare se è palindroma
+		
+		System.out.print("inserire una parola: ");
+		String parolaInserita = sc.nextLine();
+		
+		//divido la stringa in caratteri singoli
+		char[] parolaScomposta = parolaInserita.toCharArray();
+		System.out.println("parola scomposta: " + Arrays.toString(parolaScomposta));
+		
+		//creo un array lungo qunato la parola
+		char[] parolaScompostaInvertita = new char[parolaScomposta.length];
+		
+		//inizializzo una variabile x che prende il valore della lunghezza dell'array -1
+		//(sarà il numero dell'ultimo indice 
+		int x=parolaScomposta.length-1;
+		
+		//ad ogni ciclo l'indice viene sostituito con le lettere
+		for(int i=0; i<parolaScomposta.length; i++) {
+			parolaScompostaInvertita[x] = parolaScomposta[i];
+			x = x-1;
+		}
+		System.out.println("parola  scomposta Invertita: " + Arrays.toString(parolaScompostaInvertita));
+		
+		//creo una nuova stringa con l'array invertito
+		String parolaInvertita = new String(parolaScompostaInvertita);
+		System.out.println("parola Invertita: " + parolaInvertita);
+		
+		//il metodo equals() confronta due stringhe e restituisce true se è vero
+//		if(parolaInvertita.equals(parolaInserita)) {
+//			System.out.println("la parola inserita è palindroma");
+//		}else {
+//			System.out.println("la parola inserita non è palindroma");
+//		}
+		
+		//stessa condizione con l'operatore ternario
+		System.out.println(
+				parolaInvertita.equals(parolaInserita)
+				? "la parola inserita è palindroma"
+				: "la parola inserita non è palindroma"
+				);
+		//--------------------------------------------------------
+		
+		
 	}
 
 }
