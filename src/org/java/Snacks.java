@@ -106,43 +106,67 @@ public class Snacks {
 		//Data una stringa in input mostrare a video quanti caratteri alfabetici contiene, quanti numeri e 
 		//quanti simboli non alfanumerici. Continuare a chiedere una nuova stringa finchè non si inserisce 0.
 		
-		String parolaInserita = null;
+//		String parolaInserita = null;
+//		
+//		do {
+//			System.out.print("inserire una parola mista");
+//		    parolaInserita = sc.nextLine();
+//		    
+//		    int lettere = 0;
+//		    int numeri = 0;
+//		    int simboli = 0;
+//		    
+//			
+//			for(int i=0; i<parolaInserita.length(); i++) {
+//				char carattere = parolaInserita.charAt(i);
+//				
+//				 if (Character.isLetter(carattere)) {
+//					 lettere++;
+//		            } else if (Character.isDigit(carattere)) {
+//		            	numeri++;
+//		            } else {
+//		            	simboli++;
+//		            }
+//			}
+//			
+//			String msgL = (lettere == 1 ? " lettera, " : " lettere, ");
+//			String msgN = (lettere == 1 ? " numero, " : " numeri, ");
+//			String msgS = (lettere == 1 ? " simbolo, " : " simboli, ");
+//			
+//			System.out.println("nella parola che hai inserito ci sono " 
+//			+ lettere + msgL
+//			+ numeri + msgN 
+//			+ simboli + msgS);
+//			
+//		} while (!parolaInserita.equals("0"));
+//		//--------------------------------------------------------
 		
-		do {
-			System.out.print("inserire una parola mista");
-		    parolaInserita = sc.nextLine();
-		    
-		    int lettere = 0;
-		    int numeri = 0;
-		    int simboli = 0;
-		    
-			
-			for(int i=0; i<parolaInserita.length(); i++) {
-				char carattere = parolaInserita.charAt(i);
-				
-				 if (Character.isLetter(carattere)) {
-					 lettere++;
-		            } else if (Character.isDigit(carattere)) {
-		            	numeri++;
-		            } else {
-		            	simboli++;
-		            }
-			}
-			
-			String msgL = (lettere == 1 ? " lettera, " : " lettere, ");
-			String msgN = (lettere == 1 ? " numero, " : " numeri, ");
-			String msgS = (lettere == 1 ? " simbolo, " : " simboli, ");
-			
-			System.out.println("nella parola che hai inserito ci sono " 
-			+ lettere + msgL
-			+ numeri + msgN 
-			+ simboli + msgS);
-			
-		} while (!parolaInserita.equals("0"));
+		//SNACK 6
+		//Dato un numero sotto forma di stringa, convertirlo in intero senza utilizzare funzioni già pronte.
+		//Possibile usare solo :
+		//
+		//cicli
+		//chartAt
+		//if / switch
+		//Es. “25” come stringa deve essere convertito in intero 25.
+		
+		String strNum = "25";
+		
+		System.out.println(strNum);
+		System.out.println(strNum + 2);
+		
+		int intNum = 0;
+
+		for(int i = 0; i < strNum.length(); i++) {
+			intNum = (intNum * 10 ) + ((int)strNum.charAt(i) - 48);
+		}
+
+		System.out.println(intNum);
+		System.out.println(intNum + 2);
+		
 //		//--------------------------------------------------------
 		
 		
-
 	}
 
 }
