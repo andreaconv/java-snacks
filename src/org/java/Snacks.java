@@ -150,23 +150,36 @@ public class Snacks {
 		//if / switch
 		//Es. “25” come stringa deve essere convertito in intero 25.
 		
-		String strNum = "25";
-		
-		System.out.println(strNum);
-		System.out.println(strNum + 2);
-		
-		int intNum = 0;
-
-		for(int i = 0; i < strNum.length(); i++) {
-			intNum = (intNum * 10 ) + ((int)strNum.charAt(i) - 48);
-		}
-
-		System.out.println(intNum);
-		System.out.println(intNum + 2);
+//		String strNum = "25";
+//		
+//		System.out.println(strNum);
+//		System.out.println(strNum + 2);
+//		
+//		int intNum = 0;
+//
+//		for(int i = 0; i < strNum.length(); i++) {
+//			intNum = (intNum * 10 ) + ((int)strNum.charAt(i) - 48);
+//		}
+//
+//		System.out.println(intNum);
+//		System.out.println(intNum + 2);
 		
 //		//--------------------------------------------------------
 		
+		//SNACK 7
+		//Scrivere un programma che dati dei secondi li converta in ore, minuti, secondi e mostri a video la stringa generata 		(secondi → “hh:mm:ss”)
 		
+		System.out.print("Inserisci i secondi da convertire: ");
+        int secondiCompleti = sc.nextInt();
+		
+		int ore = secondiCompleti / 3600;
+        int minuti = (secondiCompleti % 3600) / 60;
+        int secondi = (secondiCompleti % 3600) % 60;
+
+        String conversione = String.format("%02dh %02dm %02ds", ore, minuti, secondi);
+        System.out.println("La conversione è: " + conversione);
+        
+//		//--------------------------------------------------------
 	}
 
 }
